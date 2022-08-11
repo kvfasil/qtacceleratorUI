@@ -1,0 +1,2 @@
+# qtacceleratorUI
+Qt based acceleratorUI
