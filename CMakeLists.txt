@@ -11,10 +11,24 @@ set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTORCC ON)
 set(CMAKE_AUTOMOC ON)
 
-find_package(Qt5 COMPONENTS Core REQUIRED)
-find_package(Qt5 COMPONENTS Widgets REQUIRED)
-find_package(Qt5 COMPONENTS Concurrent REQUIRED)
-find_package(Qt5 COMPONENTS Gui REQUIRED)
+#set(CMAKE_PREFIX_PATH "/home/fkv900/tinyrtk-2808/build-mediaclient-mediabox/tmp/work/armv7ahf-neon-rdk-linux-gnueabi/qtreferenceapp/1.0-r0/recipe-sysroot/usr/lib/cmake/")
+#set(OE_QMAKE_PATH_EXTERNAL_HOST_BINS "/home/fkv900/tinyrtk-2808/build-mediaclient-mediabox/tmp/work/armv7ahf-neon-rdk-linux-gnueabi/qtbase/5.12.3+gitAUTOINC+b527725766-r0/recipe-sysroot-native/usr/bin/")
+
+
+list(APPEND CMAKE_PREFIX_PATH "/home/fkv900/tinyrtk-2808/build-mediaclient-mediabox/tmp/work/armv7ahf-neon-rdk-linux-gnueabi/qtbase/5.12.3+gitAUTOINC+b527725766-r0/recipe-sysroot-native/usr/lib/cmake")
+list(APPEND OE_QMAKE_PATH_EXTERNAL_HOST_BINS "/home/fkv900/tinyrtk-2808/build-mediaclient-mediabox/tmp/work/armv7ahf-neon-rdk-linux-gnueabi/qtbase/5.12.3+gitAUTOINC+b527725766-r0/recipe-sysroot-native/usr/bin/")
+
+message(" CMAKE_PREFIX_PATH : ${CMAKE_PREFIX_PATH}")
+message(" HOST_BINS : ${OE_QMAKE_PATH_EXTERNAL_HOST_BINS}")
+
+
+find_package(Qt5Concurrent REQUIRED)
+find_package(Qt5Gui REQUIRED)
+find_package(Qt5Core REQUIRED)
+find_package(Qt5Widgets REQUIRED)
+
+#include_directories(${Qt5Core_INCLUDE_DIRS})
+#add_definitions(${Qt5Core_DEFINITIONS})
 
 set(CMAKE_CXX_FLAGS " ${CMAKE_CXX_FLAGS} -Wall -Wextra -Wpedantic -std=gnu++14")
 
@@ -35,8 +49,8 @@ set ( RESOURCES
 	resources.qrc
 	)
 
-QT5_WRAP_UI( UI_HEADERS ${UIS} )
 
 add_executable( ${TARGET_NAME} ${SOURCES} ${MOC_HEADERS} ${RESOURCES} ${UI_HEADERS} )
+target_link_libraries(${TARGET_NAME} ${Qt5Widgets_LIBRARIES} Qt5::Core)
 
-target_link_libraries(${TARGET_NAME} Qt5::Widgets Qt5::Core)
+install(TARGETS ${TARGET_NAME} DESTINATION bin)
