@@ -76,6 +76,12 @@ QPushButton:focus {
           <property name="text">
            <string/>
           </property>
+          <property name="autoDefault">
+           <bool>true</bool>
+          </property>
+          <property name="default">
+           <bool>true</bool>
+          </property>
          </widget>
         </item>
         <item>
@@ -153,6 +159,12 @@ QPushButton:focus {
           </property>
           <property name="text">
            <string/>
+          </property>
+          <property name="autoDefault">
+           <bool>true</bool>
+          </property>
+          <property name="default">
+           <bool>true</bool>
           </property>
          </widget>
         </item>
@@ -403,10 +415,28 @@ QPushButton:focus {
         </item>
         <item>
          <widget class="QStackedWidget" name="stackedWidget">
+          <property name="enabled">
+           <bool>true</bool>
+          </property>
+          <property name="cursor">
+           <cursorShape>ArrowCursor</cursorShape>
+          </property>
+          <property name="mouseTracking">
+           <bool>false</bool>
+          </property>
+          <property name="tabletTracking">
+           <bool>false</bool>
+          </property>
+          <property name="focusPolicy">
+           <enum>Qt::NoFocus</enum>
+          </property>
           <property name="currentIndex">
            <number>0</number>
           </property>
           <widget class="QWidget" name="page">
+           <property name="focusPolicy">
+            <enum>Qt::NoFocus</enum>
+           </property>
            <layout class="QVBoxLayout" name="verticalLayout_2">
             <item>
              <widget class="QLabel" name="label_3">
@@ -429,8 +459,11 @@ font: 20pt &quot;Ubuntu&quot;;
               <property name="horizontalScrollBarPolicy">
                <enum>Qt::ScrollBarAlwaysOff</enum>
               </property>
+              <property name="sizeAdjustPolicy">
+               <enum>QAbstractScrollArea::AdjustToContents</enum>
+              </property>
               <property name="widgetResizable">
-               <bool>true</bool>
+               <bool>false</bool>
               </property>
               <widget class="QWidget" name="scrollAreaWidgetContents_2">
                <property name="geometry">
@@ -508,6 +541,15 @@ QPushButton:focus {
                     <property name="text">
                      <string/>
                     </property>
+                    <property name="autoDefault">
+                     <bool>true</bool>
+                    </property>
+                    <property name="default">
+                     <bool>true</bool>
+                    </property>
+                    <property name="flat">
+                     <bool>false</bool>
+                    </property>
                    </widget>
                   </item>
                   <item>
@@ -539,6 +581,15 @@ QPushButton:focus {
                     </property>
                     <property name="text">
                      <string/>
+                    </property>
+                    <property name="autoDefault">
+                     <bool>true</bool>
+                    </property>
+                    <property name="default">
+                     <bool>true</bool>
+                    </property>
+                    <property name="flat">
+                     <bool>false</bool>
                     </property>
                    </widget>
                   </item>
@@ -572,6 +623,15 @@ QPushButton:focus {
                     <property name="text">
                      <string/>
                     </property>
+                    <property name="autoDefault">
+                     <bool>true</bool>
+                    </property>
+                    <property name="default">
+                     <bool>true</bool>
+                    </property>
+                    <property name="flat">
+                     <bool>false</bool>
+                    </property>
                    </widget>
                   </item>
                   <item>
@@ -603,6 +663,15 @@ QPushButton:focus {
                     </property>
                     <property name="text">
                      <string/>
+                    </property>
+                    <property name="autoDefault">
+                     <bool>true</bool>
+                    </property>
+                    <property name="default">
+                     <bool>true</bool>
+                    </property>
+                    <property name="flat">
+                     <bool>false</bool>
                     </property>
                    </widget>
                   </item>
@@ -1276,6 +1345,19 @@ QPushButton:focus {
                    </spacer>
                   </item>
                  </layout>
+                </item>
+                <item>
+                 <spacer name="verticalSpacer_4">
+                  <property name="orientation">
+                   <enum>Qt::Vertical</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>20</width>
+                    <height>40</height>
+                   </size>
+                  </property>
+                 </spacer>
                 </item>
                </layout>
               </widget>

@@ -35,3 +35,6 @@ FORMS += \
 
 RESOURCES += \
     resources.qrc
+
+INCLUDEPATH += \
+    src/lib

@@ -24,6 +24,8 @@ private slots:
 
     void on_apps_Button_clicked();
 
+    void on_youtube_Button_clicked();
+
 private:
     Ui::MainWindow *ui;
 };
